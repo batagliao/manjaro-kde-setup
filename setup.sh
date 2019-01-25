@@ -61,45 +61,97 @@ alias java='java "\$_SILENT_JAVA_OPTIONS"'
 EOF
 
 
-## the changes bellow need to be done with the applications closed
-
-call ./configure-albert.sh
-
-
 # TODO
 # Download and install themes
 # Download arc theme
 # Download +MacOSXe cursors
 # Download org.Plasma5V.2.desktop (ksplash theme)
 
+echo "============================="
+echo "==== downloading themes ====="
+echo "============================="
+source ./download-themes.sh
 
 echo "============================="
 echo "==== configuring albert ====="
 echo "============================="
-call ./configure-gtk.sh
+source ./configure-albert.sh
+wait
 
-call ./configure-notifications.sh
+echo "=========================="
+echo "==== configuring gtk ====="
+echo "=========================="
+source ./configure-gtk.sh
+wait
 
-call ./configure-octopi.sh
+echo "===================================="
+echo "==== configuring notifications ====="
+echo "===================================="
+source ./configure-notifications.sh
+wait
 
-call ./configure-kate.sh
+echo "============================="
+echo "==== configuring octopi ====="
+echo "============================="
+source ./configure-octopi.sh
+wait
 
-call ./configure-qt.sh
+echo "==========================="
+echo "==== configuring kate ====="
+echo "==========================="
+source ./configure-kate.sh
+wait
 
-call ./configure-kde-globals.sh
+echo "========================="
+echo "==== configuring QT ====="
+echo "========================="
+source ./configure-qt.sh
+wait
 
-call ./configure-shortcuts.sh
+echo "=================================="
+echo "==== configuring KDE globals ====="
+echo "=================================="
+source ./configure-kde-globals.sh
+wait
 
-call ./configure-screenlock.sh
+echo "================================"
+echo "==== configuring shortcuts ====="
+echo "================================="
+source ./configure-shortcuts.sh
+wait
 
-call ./configure-kwin.sh
+echo "================================="
+echo "==== configuring screenlock ====="
+echo "================================="
+source ./configure-screenlock.sh
+wait
 
-call ./configure-plasma.sh
+echo "==========================="
+echo "==== configuring kwin ====="
+echo "==========================="
+source ./configure-kwin.sh
+wait
 
-call ./configure-startupconfig.sh
+echo "============================="
+echo "==== configuring plasma ====="
+echo "============================="
+source ./configure-plasma.sh
+wait
 
-call ./configure-profile.sh
+echo "=============================="
+echo "==== configuring startup ====="
+echo "=============================="
+source ./configure-startupconfig.sh
+wait
 
+echo "=============================="
+echo "==== configuring profile ====="
+echo "=============================="
+wait ./configure-profile.sh
+
+echo "======================="
+echo "==== quiting apps ====="
+echo "======================="
 
 kquitapp5 plasmashell &> /dev/null
 sleep 3
@@ -108,3 +160,14 @@ sleep 3
 
 # force kde to re-read settings
 qdbus org.kde.kwin /KWin reconfigure
+
+
+read -p "We need to reboot. Do it now (y/n)? " answer
+case ${answer:0:1} in
+    y|Y )
+        reboot
+    ;;
+    * )
+        echo Ok. Do it yourself
+    ;;
+esac
