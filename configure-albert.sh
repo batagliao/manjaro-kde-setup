@@ -1,7 +1,4 @@
 
-echo "============================="
-echo "==== configuring albert ====="
-echo "============================="
 # group general
 kwriteconfig5 --file ~/.config/albert/albert.conf --group General --key hotkey  Alt+Space &&
 kwriteconfig5 --file ~/.config/albert/albert.conf --group General --key incrementalSort --type bool true

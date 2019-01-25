@@ -21,7 +21,9 @@ echo "===== enabling AUR ======"
 echo "========================="
 pacman -S yay --noconfirm --needed &&
 pacman -S trizen --noconfirm --needed &&
-#TODO: config octopi to use trizen
+
+echo "Removing Yakuake"
+pacman -R Yakuake --noconfirm --needed &&
 
 # from now on, lets intall packages using YAY
 
@@ -68,8 +70,12 @@ call ./configure-albert.sh
 # Download and install themes
 # Download arc theme
 # Download +MacOSXe cursors
+# Download org.Plasma5V.2.desktop (ksplash theme)
 
 
+echo "============================="
+echo "==== configuring albert ====="
+echo "============================="
 call ./configure-gtk.sh
 
 call ./configure-notifications.sh
@@ -88,7 +94,11 @@ call ./configure-screenlock.sh
 
 call ./configure-kwin.sh
 
-#configure-plasma.sh
+call ./configure-plasma.sh
+
+call ./configure-startupconfig.sh
+
+call ./configure-profile.sh
 
 
 kquitapp5 plasmashell &> /dev/null

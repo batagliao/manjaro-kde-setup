@@ -136,3 +136,25 @@ style "MenuItem"
 
 class "*MenuItem" style "MenuItem"
 EOFGTK20
+
+cat > ~/.gtkrc-2.0 << 'EOF_GTKRC20'
+# File created by KDE Gtk Config
+# Configs for GTK2 programs 
+
+include "/usr/share/themes/Arc-Breath-Dark/gtk-2.0/gtkrc"
+style "user-font" 
+{
+	font_name="Helvetica LT Std Light Regular"
+}
+widget_class "*" style "user-font"
+gtk-font-name="Helvetica LT Std Light Regular 10"
+gtk-theme-name="Arc-Breath-Dark"
+gtk-icon-theme-name="breeze-dark"
+gtk-fallback-icon-theme="Adwaita"
+gtk-cursor-theme-name="+MacOSXe"
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-menu-images=1
+gtk-button-images=1
+gtk-primary-button-warps-slider=0
+gtk-modules=appmenu-gtk-module
+EOF_GTKRC20
