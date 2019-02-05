@@ -9,21 +9,21 @@
 echo "========================"
 echo "=== updating mirrors ==="
 echo "========================"
-pacman-mirrors -g &&
+sudo pacman-mirrors -g &&
 
 echo "========================="
 echo "=== updating packages ==="
 echo "========================="
-pacman -Syyuu --noconfirm &&
+sudo pacman -Syyuu --noconfirm &&
 
 echo "========================="
 echo "===== enabling AUR ======"
 echo "========================="
-pacman -S yay --noconfirm --needed &&
-pacman -S trizen --noconfirm --needed &&
+sudo pacman -S yay --noconfirm --needed &&
+sudo pacman -S trizen --noconfirm --needed &&
 
 echo "Removing Yakuake"
-pacman -R yakuake --noconfirm &&
+sudo pacman -R yakuake --noconfirm &&
 # from now on, lets intall packages using YAY
 
 source ./installation.sh
@@ -32,7 +32,7 @@ wait
 echo "====================================================================="
 echo "================= fixing Java fonts antialiasing ===================="
 echo "====================================================================="
-cat <<EOF >> /etc/environment
+sudo cat <<EOF >> /etc/environment
 ### Java fonts antialiasing settings
 _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true \
   -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel \
@@ -40,14 +40,14 @@ _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true \
 JAVA_FONTS=/usr/share/fonts/TTF
 EOF
 
-cat <<EOF >> /etc/bash.bashrc
+sudo cat <<EOF >> /etc/bash.bashrc
 ### Java options
 _SILENT_JAVA_OPTIONS="\$_JAVA_OPTIONS"
 unset _JAVA_OPTIONS
 alias java='java "\$_SILENT_JAVA_OPTIONS"'
 EOF
 
-cat <<EOF >> /etc/bash.bashrc
+sudo cat <<EOF >> /etc/bash.bashrc
 ### Java options
 _SILENT_JAVA_OPTIONS="\$_JAVA_OPTIONS"
 unset _JAVA_OPTIONS
