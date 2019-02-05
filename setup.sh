@@ -32,7 +32,7 @@ wait
 echo "====================================================================="
 echo "================= fixing Java fonts antialiasing ===================="
 echo "====================================================================="
-sudo cat <<EOF >> /etc/environment
+cat <<EOF >> /etc/environment
 ### Java fonts antialiasing settings
 _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true \
   -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel \
@@ -40,14 +40,14 @@ _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true \
 JAVA_FONTS=/usr/share/fonts/TTF
 EOF
 
-sudo cat <<EOF >> /etc/bash.bashrc
+cat <<EOF >> /etc/bash.bashrc
 ### Java options
 _SILENT_JAVA_OPTIONS="\$_JAVA_OPTIONS"
 unset _JAVA_OPTIONS
 alias java='java "\$_SILENT_JAVA_OPTIONS"'
 EOF
 
-sudo cat <<EOF >> /etc/bash.bashrc
+cat <<EOF >> /etc/bash.bashrc
 ### Java options
 _SILENT_JAVA_OPTIONS="\$_JAVA_OPTIONS"
 unset _JAVA_OPTIONS

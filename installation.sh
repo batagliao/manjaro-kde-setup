@@ -83,6 +83,8 @@ yay -S aur/nvm --noconfirm --needed &&
 # put nvm in bash and zsh
 echo 'source /usr/share/nvm/init-nvm.sh' >> /home/$USER/.bashrc
 echo 'source /usr/share/nvm/init-nvm.sh' >> /home/$USER/.zshrc
+source /home/$USER/.bashrc
+source /home/$USER/.zshrc
 nvm install node && # install latest node
 
 echo "=============================="
@@ -116,5 +118,5 @@ yay -S aur/plasma5-theme-aex-nomad-git --noconfirm --needed &&
 # kvantum
 yay -S community/kvantum-manjaro --noconfirm --needed &&
 
-# gnome && gtk compatibility
+# gnome  gtk compatibility
 yay -S extra/gnome-themes-extra --noconfirm --needed &&
