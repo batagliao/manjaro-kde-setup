@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # check if is root
-if [ "`id -u`" != "0" ]; then
-    echo "Must be run as root"
-    exit 1
-fi
+# if [ "`id -u`" != "0" ]; then
+#     echo "Must be run as root"
+#     exit 1
+# fi
 
 echo "========================"
 echo "=== updating mirrors ==="
@@ -14,7 +14,7 @@ pacman-mirrors -g &&
 echo "========================="
 echo "=== updating packages ==="
 echo "========================="
-pacman-mirrors -Syyuu --noconfirm &&
+pacman -Syyuu --noconfirm &&
 
 echo "========================="
 echo "===== enabling AUR ======"
@@ -23,11 +23,11 @@ pacman -S yay --noconfirm --needed &&
 pacman -S trizen --noconfirm --needed &&
 
 echo "Removing Yakuake"
-pacman -R Yakuake --noconfirm &&
-
+pacman -R yakuake --noconfirm &&
 # from now on, lets intall packages using YAY
 
 source ./installation.sh
+wait 
 
 echo "====================================================================="
 echo "================= fixing Java fonts antialiasing ===================="
