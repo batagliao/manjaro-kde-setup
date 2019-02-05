@@ -81,8 +81,8 @@ echo "============================"
 # node
 yay -S aur/nvm --noconfirm --needed &&
 # put nvm in bash and zsh
-echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.bashrc
-echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc
+echo 'source /usr/share/nvm/init-nvm.sh' >> /home/$USER/.bashrc
+echo 'source /usr/share/nvm/init-nvm.sh' >> /home/$USER/.zshrc
 nvm install node && # install latest node
 
 echo "=============================="

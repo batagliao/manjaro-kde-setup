@@ -1,4 +1,4 @@
-cat > ~/.config/plama-org.kde.plasma.desktop-appletrc << 'EOF_PLASMA_APPLET_RC'
+cat > /home/$USER/.config/plama-org.kde.plasma.desktop-appletrc << 'EOF_PLASMA_APPLET_RC'
 
 [ActionPlugins][0]
 MidButton;NoModifier=org.kde.paste
@@ -283,7 +283,7 @@ itemsOnDisabledScreens=
 EOF_PLASMA_APPLET_RC
 
 
-cat > ~/.config/plasmarc << 'EOF_PLASMARC'
+cat > /home/$USER/.config/plasmarc << 'EOF_PLASMARC'
 [OSD]
 Enabled=true
 

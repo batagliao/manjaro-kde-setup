@@ -23,17 +23,11 @@ pacman -S yay --noconfirm --needed &&
 pacman -S trizen --noconfirm --needed &&
 
 echo "Removing Yakuake"
-pacman -R Yakuake --noconfirm --needed &&
+pacman -R Yakuake --noconfirm &&
 
 # from now on, lets intall packages using YAY
 
-call ./installation.sh
-
-
-echo "=============================="
-echo "= optimizing pacman database ="
-echo "=============================="
-pacman-optimize &&
+source ./installation.sh
 
 echo "====================================================================="
 echo "================= fixing Java fonts antialiasing ===================="
@@ -59,13 +53,6 @@ _SILENT_JAVA_OPTIONS="\$_JAVA_OPTIONS"
 unset _JAVA_OPTIONS
 alias java='java "\$_SILENT_JAVA_OPTIONS"'
 EOF
-
-
-# TODO
-# Download and install themes
-# Download arc theme
-# Download +MacOSXe cursors
-# Download org.Plasma5V.2.desktop (ksplash theme)
 
 echo "============================="
 echo "==== downloading themes ====="
@@ -147,7 +134,8 @@ wait
 echo "=============================="
 echo "==== configuring profile ====="
 echo "=============================="
-wait ./configure-profile.sh
+source ./configure-profile.sh
+wait
 
 echo "======================="
 echo "==== quiting apps ====="

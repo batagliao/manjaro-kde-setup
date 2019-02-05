@@ -1,26 +1,23 @@
-echo "============================="
-echo "====== configuring GTK ======"
-echo "============================="
 # configure GTK
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-application-prefer-dark-theme --type bool true
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-cursor-theme-name '+MacOSXe'
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-cursor-theme-size 18
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-enable-event-sounds 1
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-enable-input-feedback-sounds 1
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-fallback-icon-theme 'Adwaita'
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-font-name 'Helvetica LT Std Light Regular 10'
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-icon-theme-name 'breeze-dark'
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-modules 'appmenu-gtk-module'
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-primary-button-warps-slider 0
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-shell-shows-menubar 1
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-theme-name 'Arc-Breath-Dark'
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-toolbar-icon-size 'GTK_ICON_SIZE_LARGE_TOOLBAR'
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-xft-antialias 1
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-xft-hinting 1
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-xft-hintstyle 'hintfull'
-kwriteconfig5 --file ~/.config/gtk-3.0/settings.ini --group Settings --key gtk-xft-rgba 'rgb'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-application-prefer-dark-theme --type bool true
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-cursor-theme-name '+MacOSXe'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-cursor-theme-size 18
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-enable-event-sounds 1
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-enable-input-feedback-sounds 1
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-fallback-icon-theme 'Adwaita'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-font-name 'Helvetica LT Std Light Regular 10'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-icon-theme-name 'breeze-dark'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-modules 'appmenu-gtk-module'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-primary-button-warps-slider 0
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-shell-shows-menubar 1
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-theme-name 'Arc-Breath-Dark'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-toolbar-icon-size 'GTK_ICON_SIZE_LARGE_TOOLBAR'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-xft-antialias 1
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-xft-hinting 1
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-xft-hintstyle 'hintfull'
+kwriteconfig5 --file /home/$USER/.config/gtk-3.0/settings.ini --group Settings --key gtk-xft-rgba 'rgb'
 
-cat > ~/.config/gtkrc << 'EOFGTK'
+cat > /home/$USER/.config/gtkrc << 'EOFGTK'
 # created by KDE Plasma, ter jan 8 16:00:56 2019
 #
 # If you do not want Plasma to override your GTK settings, select
@@ -77,7 +74,7 @@ style "MenuItem"
 class "*MenuItem" style "MenuItem"
 EOFGTK
 
-cat > ~/.config/gtkrc-2.0 << 'EOFGTK20'
+cat > /home/$USER/.config/gtkrc-2.0 << 'EOFGTK20'
 # created by KDE Plasma, ter jan 8 16:00:56 2019
 #
 # If you do not want Plasma to override your GTK settings, select
@@ -137,7 +134,7 @@ style "MenuItem"
 class "*MenuItem" style "MenuItem"
 EOFGTK20
 
-cat > ~/.gtkrc-2.0 << 'EOF_GTKRC20'
+cat > /home/$USER/.gtkrc-2.0 << 'EOF_GTKRC20'
 # File created by KDE Gtk Config
 # Configs for GTK2 programs 
 

@@ -1,4 +1,4 @@
-cat > ~/.config/startupconfig << 'EOF_STARTTUPCONFIG'
+cat > /home/$USER/.config/startupconfig << 'EOF_STARTTUPCONFIG'
 
 #! /bin/sh
 # kcminputrc Mouse cursorTheme 'breeze_cursors'
@@ -15,7 +15,7 @@ kdeglobals_kscreen_screenscalefactors=''
 kcmfonts_general_forcefontdpi=0
 EOF_STARTTUPCONFIG
 
-cat > ~/.config/startupconfigfiles << 'EOF_STARTUPCONFIGFILES'
+cat > /home/$USER/.config/startupconfigfiles << 'EOF_STARTUPCONFIGFILES'
 kcminputrc Mouse cursorTheme 'breeze_cursors'
 /home/batagliao/.config/kcminputrc
 !/etc/xdg/kcminputrc
